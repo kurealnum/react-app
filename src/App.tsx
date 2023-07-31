@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
@@ -7,6 +8,8 @@ function App() {
 
   const handleSelectItem = (item: string) => console.log(item);
 
+  const [status, setStatus] = useState(false);
+
   return (
     <div>
       <ListGroup
@@ -14,12 +17,8 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
-      <Alert>
-        <div>
-          some text here <span>and text here</span>
-        </div>
-      </Alert>
-      <Button>Click me!</Button>
+      {status && <Alert onClose={() => setStatus(false)}>My Alert</Alert>}
+      <Button onClickButton={() => setStatus(true)}>Click me!</Button>
     </div>
   );
 }
