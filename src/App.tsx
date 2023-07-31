@@ -19,7 +19,7 @@ function App() {
           some text here <span>and text here</span>
         </div>
       </Alert>
-      <Button />
+      <Button>Click me!</Button>
     </div>
   );
 }

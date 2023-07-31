@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-const Button = () => {
+interface ButtonProps {
+  children: string;
+}
+
+const Button = ({ children }: ButtonProps) => {
   const [counter, setCounter] = useState(0);
 
   function myfunc() {
@@ -8,7 +12,7 @@ const Button = () => {
     console.log(counter);
   }
 
-  return <button onClick={myfunc}>Click me!</button>;
+  return <button onClick={myfunc}> {children} </button>;
 };
 
 export default Button;
